@@ -1,2 +1,2 @@
 # architect-portfolio
-Web application- Architect firm
+Personal architect portfolio website project
