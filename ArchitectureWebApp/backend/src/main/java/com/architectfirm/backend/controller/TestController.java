@@ -15,6 +15,6 @@ public class TestController {
     @GetMapping("/api/test/json")
     public SampleResponse testJson(){
 
-        return new SampleResponse("Pihu is my Love.", 3000);
+        return new SampleResponse("Hello guys, this is test message.", 3000);
     }
 }

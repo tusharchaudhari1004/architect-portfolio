@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Booking {
 
     private String name;
-    private int phone;
+    private String phone;
     private String email;
     private String date;
     private String message;
@@ -15,7 +15,7 @@ public class Booking {
 
     public Booking(){}
 
-    public Booking(String name, int phone, String email, String date, String message) {
+    public Booking(String name, String phone, String email, String date, String message) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -31,11 +31,11 @@ public class Booking {
         this.name = name;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -61,5 +61,6 @@ public class Booking {
 
     public void setMessage(String message) {
         this.message = message;
+
     }
 }

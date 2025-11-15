@@ -4,7 +4,7 @@ package com.architectfirm.backend.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collation = "testdata")
+@Document(collection = "testdata")
 public class TestData {
     @Id
     private String id;
