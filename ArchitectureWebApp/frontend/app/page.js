@@ -41,6 +41,8 @@ export default function Home() {
         </div>
       </section>
 
+
+
       {/* ABOUT SECTION */}
       <section className="px-12 py-16">
         <h2 className="text-3xl font-bold mb-4">About Our Studio</h2>
