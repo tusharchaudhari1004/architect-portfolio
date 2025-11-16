@@ -1,15 +1,29 @@
 package com.architectfirm.backend.model;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import org.springframework.boot.actuate.endpoint.jmx.JmxEndpointsSupplier;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document (collection = "bookings")
 public class Booking {
 
+    @Id
+    private String id;
+
+    @NotBlank(message = "Name is required")
     private String name;
+
+    @NotBlank(message = "Phone Number is required")
     private String phone;
+
+    @Email(message = "Invalid email format")
     private String email;
+
+    @NotBlank(message = "Date is required")
     private String date;
+
     private String message;
 
 
