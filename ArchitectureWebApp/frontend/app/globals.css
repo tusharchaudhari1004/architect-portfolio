@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* design tokens */
+:root{
+  --accent: #b49b52; /* subtle gold */
+  --beige: #f5f1e8;
+  --charcoal: #222222;
+  --dark-bg: #0c0c0c;
+  --card-dark: #141414;
+}
+
+/* LIGHT THEME */
+body {
+  background-color: var(--beige);
+  color: var(--charcoal);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* DARK THEME */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark-bg);
+    color: #e8e8e8;
+  }
+}
+
+/* serif headings utility (uses Playfair Display) */
+.font-serif { font-family: "Playfair Display", Georgia, serif; }
+
+/* small aesthetic rule for a thin blueprint stripe under hero (used via a class) */
+.blueprint-stripe {
+  background: linear-gradient(90deg, rgba(180,155,82,0.08) 0%, rgba(180,155,82,0.02) 100%);
+}
+
+/* small helper to ensure card contrast in dark */
+.card-surface {
+  background-color: white;
+}
+@media (prefers-color-scheme: dark) {
+  .card-surface {
+    background-color: #141414;
+  }
+}
