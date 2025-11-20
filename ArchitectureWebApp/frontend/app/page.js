@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+
 
 export default function Home() {
   const projects = [
@@ -11,71 +11,67 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-neutral-900 text-white">
-      {/* NAVBAR */}
-      <Navbar />
 
       {/* HERO SECTION */}
+
+        <h1 className="text-5xl font-bold leading-tight drop-shadow-lg">
+          Crafting Modern Architecture <br /> with Timeless Elegance
+        </h1>
+        <p className="text-lg mt-4 max-w-2xl drop-shadow-lg">
+          We design bold, contemporary spaces — from concept to execution.
+          Precision, material truth, and thoughtful spatial flow are the heart of our practice.
+        </p>
       <section className="relative">
         <img
           src="/hero.jpg"
           alt="Modern Architecture"
-          className="w-full h-[500px] object-cover opacity-90"
+          className="w-full h-[600px] object-cover"
         />
 
-        <div className="absolute inset-0 flex flex-col justify-center items-start px-12 bg-gradient-to-b from-black/60 to-transparent">
-          <h1 className="text-5xl font-bold mb-3">
-            Crafting Modern Architecture <br /> with Timeless Elegance
-          </h1>
-          <p className="text-lg max-w-xl opacity-90">
-            We design bold, contemporary spaces — from concept to execution.
-            Precision, material truth, and thoughtful spatial flow are the heart
-            of our practice.
-          </p>
+        <div className="absolute inset-0 flex flex-col justify-center px-12 bg-gradient-to-b from-black/70 via-black/40 to-transparent">
+          
 
           <a
             href="#"
-            className="mt-6 px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 transition"
+            className="mt-6 px-8 py-4 bg-white text-black font-semibold text-lg rounded-full hover:bg-neutral-300 transition drop-shadow-xl"
           >
             Book a Consultation
           </a>
         </div>
       </section>
 
-
-
       {/* ABOUT SECTION */}
-      <section className="px-12 py-16">
-        <h2 className="text-3xl font-bold mb-4">About Our Studio</h2>
-        <p className="text-neutral-300 max-w-3xl leading-relaxed">
+      <section className="px-12 py-20">
+        <h2 className="text-4xl font-bold mb-6">About Our Studio</h2>
+        <p className="text-neutral-300 max-w-4xl leading-relaxed text-lg">
           Our studio blends modern materials with disciplined composition. We
-          focus on clarity, constructive detailing and the quality of light to
-          produce spaces that last.
+          specialize in architecture that balances functionality, material
+          honesty, and visual clarity. Every project is a commitment to
+          long-lasting quality.
         </p>
       </section>
 
       {/* PROJECTS SECTION */}
       <section className="px-12 pb-20">
-        <h2 className="text-3xl font-bold text-center mb-10">
-          Selected Projects
+        <h2 className="text-4xl font-bold text-center mb-12">
+          PROJECTS
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* GRID LAYOUT */}
+        <div className="masonry px-2">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="max-w-[1080px] mx-auto bg-neutral-800 border border-neutral-700 rounded-xl overflow-hidden hover:scale-[1.02] transition shadow-lg"
+              className="masonry-item rounded-xl overflow-hidden border border-neutral-700 shadow-lg"
             >
               <img
                 src={project.img}
-                alt={project.title}
-                className="w-full h-30 object-cover rounded-t-xl"
+                className="w-full object-cover rounded-t-xl"
+                style={{ maxHeight: "300px" }}   // resize image
               />
 
-              <div className="p-5">
+              <div className="p-4">
                 <h3 className="text-xl font-semibold">{project.title}</h3>
-                <p className="text-neutral-400 text-sm mt-1">
-                  Design + execution
-                </p>
               </div>
             </div>
           ))}
@@ -83,9 +79,10 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="text-center py-8 text-neutral-500 border-t border-neutral-800">
+      <footer className="text-center py-10 text-neutral-500 border-t border-neutral-800">
         © {new Date().getFullYear()} Architect Firm. All Rights Reserved.
       </footer>
+
     </div>
   );
 }

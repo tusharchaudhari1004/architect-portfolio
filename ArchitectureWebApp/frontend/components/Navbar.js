@@ -11,6 +11,7 @@ export default function Navbar() {
         <Link href="/projects" className="hover:opacity-80">Projects</Link>
         <Link href="/booking" className="hover:opacity-80">Book</Link>
         <Link href="/contact" className="hover:opacity-80">Contact</Link>
+        <Link href="/about" className="hover:opacity-80">About</Link>
       </div>
     </nav>
   );
