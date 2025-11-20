@@ -79,9 +79,15 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="text-center py-10 text-neutral-500 border-t border-neutral-800">
-        © {new Date().getFullYear()} Architect Firm. All Rights Reserved.
+      <div>
+        <p>
+           
+        </p>
+      </div>
+      <footer className="text-center font-bold py-10 text-neutral-500 bg-neutral-900">
+  ©     {new Date().getFullYear()} Architect Firm. All Rights Reserved.
       </footer>
+
 
     </div>
   );
