@@ -1,6 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fadeUp 1.6s ease-out forwards;
+}
 
 /* design tokens */
 :root{
@@ -20,13 +33,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* DARK THEME */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--dark-bg);
-    color: #e8e8e8;
-  }
-}
+
 
 /* serif headings utility (uses Playfair Display) */
 .font-serif { font-family: "Playfair Display", Georgia, serif; }

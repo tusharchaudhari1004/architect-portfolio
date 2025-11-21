@@ -1,60 +1,57 @@
 export default function ServicesPage() {
   return (
-        <section className="relative w-full h-[780px] overflow-hidden">
+    <div className="min-h-screen bg-neutral-900 text-white">
 
-  {/* Background Image */}
-  <img
-    src="/services-hero.jpg"
-    alt="Architecture"
-    className="
-      absolute inset-0 w-full h-full object-cover
-      grayscale blur-sm brightness-[0.55]
-      dark:brightness-[0.35]
-    "
-  />
+      {/* HERO SECTION */}
+      <section className="relative w-full h-[750px] overflow-hidden">
 
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black/40"></div>
+        {/* Background Image */}
+        <img
+          src="/services-hero.jpg"
+          className="absolute inset-0 w-full h-full object-cover grayscale blur-[3px] opacity-60"
+          alt="Services Hero"
+        />
 
-  {/* MOTTO */}
-  <div className="relative z-20 h-full flex items-center justify-center px-8">
+        {/* DARK OVERLAY */}
+        <div className="absolute inset-0 bg-black/40"></div>
 
-    <div className="flex items-center gap-6">
+        {/* --- MOTTO WRAPPER (Perfect Center) --- */}
+        <div className="relative z-20 flex items-center justify-center h-full px-8">
 
-      {/* LEFT QUOTE — fully customizable */}
-      <span className="
-        font-serif text-white/80 
-        drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)]
-        text-[90px]
-      ">
-        &ldquo;
-      </span>
+          {/* MOTTO BOX (Positioning reference for quotes) */}
+          <div className="relative max-w-5xl mx-auto text-center">
 
-      {/* Motto text */}
-      <h1 className="
-        text-3xl md:text-5xl font-serif font-semibold 
-        text-white tracking-wide text-center
-        drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]
-      ">
-        Designing environments that inspire.
-      </h1>
+            {/* TOP-LEFT QUOTE */}
+            <span
+              className="absolute -top-[38px] -left-[80px] text-white/70 font-serif drop-shadow-2xl text-[120px]"
+            >
+              &ldquo;
+            </span>
 
-      {/* RIGHT QUOTE — fully customizable */}
-      <span className="
-        font-serif text-white/80 
-        drop-shadow-[0_4px_12px_rgba(0,0,0,0.7)]
-        text-[90px]
-      ">
-        &rdquo;
-      </span>
+            <h1
+                className="
+                text-[50px] font-serif font-semibold 
+                text-white tracking-wide 
+                drop-shadow-[0_5px_10px_rgba(0,0,0,0.7)]
+                fade-up
+                [text-shadow:_0_0_900px_rgba(255,255,255,0.55)]
+                "
+            >
+              Designing environments that inspire.
+            </h1>
+
+            {/* BOTTOM-RIGHT QUOTE */}
+            <span
+              className="absolute -bottom-[80px] -right-[80px] text-white/70 font-serif drop-shadow-2xl text-[120px]"
+            >
+              &rdquo;
+            </span>
+
+          </div>
+        </div>
+
+      </section>
 
     </div>
-
-  </div>
-
-</section>
-
-
-
   );
 }
