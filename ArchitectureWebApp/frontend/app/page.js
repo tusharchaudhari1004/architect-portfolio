@@ -42,7 +42,7 @@ export default function Home() {
           </p>
 
           <a
-            href="http://localhost:3000/booking"
+            href="http://localhost:3000/book"
             className="mt-6 px-8 py-4 bg-white text-black font-semibold text-lg rounded-full 
                        hover:bg-neutral-300 transition drop-shadow-xl w-fit"
           >
