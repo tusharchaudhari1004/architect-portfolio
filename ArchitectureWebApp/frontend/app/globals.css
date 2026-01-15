@@ -1,30 +1,71 @@
+/* ✅ Correct Tailwind Import — REQUIRED for Tailwind v4 */
+@import "tailwindcss";
+
+/* Tailwind Layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ----------------------------- */
+/*          Animations           */
+/* ----------------------------- */
 @keyframes fadeUp {
   0% {
     opacity: 0;
     transform: translateY(20px);
+  }
+  100% {  
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 1.6s ease-out forwards;
+}
+
+@keyframes staggerFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
-.fade-up {
-  animation: fadeUp 1.6s ease-out forwards;
+
+.stagger-item {
+  opacity: 0;
+  animation: staggerFadeUp 0.8s ease-out forwards;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
 }
 
-/* design tokens */
-:root{
-  --accent: #b49b52; /* subtle gold */
-  --beige: #f5f1e8;
-  --charcoal: #222222;
-  --dark-bg: #0c0c0c;
-  --card-dark: #141414;
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* LIGHT THEME */
+
+/* ----------------------------- */
+/*       Design Tokens           */
+/* ----------------------------- */
+:root {
+  --accent: #b49b52;         /* gold */
+  --beige: #f5f1e8;          /* light background */
+  --charcoal: #222222;       /* text */
+  --dark-bg: #0c0c0c;        /* dark theme background */
+  --card-dark: #141414;      /* dark card */
+}
+
+/* ----------------------------- */
+/*         Base Theme            */
+/* ----------------------------- */
+
 body {
   background-color: var(--beige);
   color: var(--charcoal);
@@ -33,25 +74,44 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ----------------------------- */
+/*       Typography Helpers      */
+/* ----------------------------- */
 
-
-/* serif headings utility (uses Playfair Display) */
-.font-serif { font-family: "Playfair Display", Georgia, serif; }
-
-/* small aesthetic rule for a thin blueprint stripe under hero (used via a class) */
-.blueprint-stripe {
-  background: linear-gradient(90deg, rgba(180,155,82,0.08) 0%, rgba(180,155,82,0.02) 100%);
+.font-serif {
+  font-family: "Playfair Display", Georgia, serif;
 }
 
-/* small helper to ensure card contrast in dark */
+/* ----------------------------- */
+/*        Aesthetic Stripe       */
+/* ----------------------------- */
+
+.blueprint-stripe {
+  background: linear-gradient(
+    90deg,
+    rgba(180,155,82,0.08) 0%,
+    rgba(180,155,82,0.02) 100%
+  );
+}
+
+/* ----------------------------- */
+/*         Card Surfaces         */
+/* ----------------------------- */
+
 .card-surface {
   background-color: white;
 }
+
 @media (prefers-color-scheme: dark) {
   .card-surface {
-    background-color: #141414;
+    background-color: var(--card-dark);
   }
 }
+
+/* ----------------------------- */
+/*          Masonry Grid         */
+/* ----------------------------- */
+
 .masonry {
   column-count: 1;
   column-gap: 1.5rem;

@@ -24,6 +24,16 @@ public class Booking {
     @NotBlank(message = "Date is required")
     private String date;
 
+    @NotBlank(message = "Project type is required")
+    private String projectType;
+
+    @NotBlank(message = "Budget is required")
+    private String budget;
+
+    @NotBlank(message = "Time is required")
+    private String time;
+
+
     private String message;
 
 
@@ -68,6 +78,16 @@ public class Booking {
     public void setDate(String date) {
         this.date = date;
     }
+
+    public String getProjectType() { return projectType; }
+    public void setProjectType(String projectType) { this.projectType = projectType; }
+
+    public String getBudget() { return budget; }
+    public void setBudget(String budget) { this.budget = budget; }
+
+    public String getTime() { return time; }
+    public void setTime(String time) { this.time = time; }
+
 
     public String getMessage() {
         return message;

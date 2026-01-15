@@ -6,6 +6,11 @@ import com.architectfirm.backend.repository.BookingRepository;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(
+        origins = "http://localhost:3000",
+        allowedHeaders = "*",
+        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.OPTIONS}
+)
 @RestController
 @RequestMapping("/api/bookings")
 public class BookingController {
@@ -22,7 +27,7 @@ public class BookingController {
         return bookingRepository.save(booking);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}"   )
     public String deleteBooking(@PathVariable String id) {
 
         if (!bookingRepository.existsById(id)) {
